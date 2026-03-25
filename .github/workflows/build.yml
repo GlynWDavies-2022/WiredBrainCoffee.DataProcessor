@@ -20,8 +20,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./WiredBrainCoffee.DataProcessor.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build ./WiredBrainCoffee.DataProcessor.sln --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test ./WiredBrainCoffee.DataProcessor.sln --configuration Release --no-build
